@@ -1,0 +1,8 @@
+type: framework
+content:
+  - Creating models
+  - Admin panel and main view
+  - Bike page
+  - A form to order
+  - Processing the orders
+current_task: 1

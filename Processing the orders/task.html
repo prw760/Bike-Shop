@@ -1,0 +1,27 @@
+<div class="step-text">
+<h5 id="description">Description</h5>
+<p>In this stage, your task is to ensure that the customers' orders are processed, the submitted information is saved, and the bike shop staff can see the orders in the admin panel. It would also be great to inform your customers that you have their order and provide them with the order number.</p>
+<p>In the previous stage, you've created a form for ordering a bike; now, your application needs to accept and process the submitted data via <code class="java">POST</code> requests. Let's break it down into steps; the following things should happen once a customer clicks on the <code class="java">order</code> button:</p>
+<ul>
+<li>Create an order object with information on the customer — name, surname, and phone number. Orders should be visible in the admin panel;</li>
+<li>The number of bike parts — update frames, seats, tires, and basket. Update only the number of the right bike parts — if your shop uses black, blue, and white frames, but the ordered bike comes with a black frame, decrease the black frame by one. Also, don't forget that each cycle has two tires;</li>
+<li>Redirect the customer to a new page — <em>localhost:8000/order/order_no/</em>, where <em>order_no</em> is the automatically generated order id. </li>
+</ul>
+<p>The <em>localhost:8000/order/order_no/ </em>page<em> </em>is a simple page with two elements:</p>
+<ul>
+<li>An &lt;h2&gt; tag with text The <code class="java">Thank you for your order!</code> heading under the <code class="java">&lt;h2&gt;</code> tag;</li>
+<li><code class="java">Your order number is *order_no*. We will call you once your bike is ready!</code> under the <code class="java">&lt;p&gt;</code> tag.</li>
+</ul>
+<p>That's it! You can go ahead and test it. Use the <code class="java">python manage.py runserver</code> command to start the application. In particular, don't forget to test if the number of elements gets updated and orders appear in the admin panel.</p>
+<h5 id="objectives">Objectives</h5>
+<ul>
+<li>Ensure that the order information is saved through <code class="java">POST</code> requests following the Description section;</li>
+<li>Once the order is made, redirect the customer to <em>localhost:8000/order/order_no/</em>, a new page with two elements: the thank-you message and the information on the order.</li>
+</ul>
+<h5 id="example">Example</h5>
+<p><strong>Example 1: </strong><em>the admin panel page shows information about order #1</em></p>
+<p><picture><source media="(max-width: 480px)" srcset="https://ucarecdn.com/d91d265c-ce0c-4dc2-aad7-fff515d0f827/-/stretch/off/-/resize/480x/-/format/webp/ 1x,https://ucarecdn.com/d91d265c-ce0c-4dc2-aad7-fff515d0f827/-/stretch/off/-/resize/960x/-/format/webp/ 2x,https://ucarecdn.com/d91d265c-ce0c-4dc2-aad7-fff515d0f827/-/stretch/off/-/resize/1440x/-/format/webp/ 3x" type="image/webp"/><source media="(max-width: 800px)" srcset="https://ucarecdn.com/d91d265c-ce0c-4dc2-aad7-fff515d0f827/-/stretch/off/-/resize/800x/-/format/webp/ 1x,https://ucarecdn.com/d91d265c-ce0c-4dc2-aad7-fff515d0f827/-/stretch/off/-/resize/1600x/-/format/webp/ 2x,https://ucarecdn.com/d91d265c-ce0c-4dc2-aad7-fff515d0f827/-/stretch/off/-/resize/2400x/-/format/webp/ 3x" type="image/webp"/><source srcset="https://ucarecdn.com/d91d265c-ce0c-4dc2-aad7-fff515d0f827/-/stretch/off/-/resize/1100x/-/format/webp/ 1x,https://ucarecdn.com/d91d265c-ce0c-4dc2-aad7-fff515d0f827/-/stretch/off/-/resize/2200x/-/format/webp/ 2x,https://ucarecdn.com/d91d265c-ce0c-4dc2-aad7-fff515d0f827/-/stretch/off/-/resize/3000x/-/format/webp/ 3x" type="image/webp"/><img alt="Bike Shop site: Django admin panel page shows information about order #1" height="600" name="order details.png" src="https://ucarecdn.com/d91d265c-ce0c-4dc2-aad7-fff515d0f827/" width="877"/></picture></p>
+<p> </p>
+<p><strong>Example 2: </strong><em>localhost:8000/order/1/ page for order #1</em></p>
+<p><picture><source media="(max-width: 480px)" srcset="https://ucarecdn.com/5b25ea36-73b9-423d-b34f-49ce571f487b/-/stretch/off/-/resize/480x/-/format/webp/ 1x,https://ucarecdn.com/5b25ea36-73b9-423d-b34f-49ce571f487b/-/stretch/off/-/resize/960x/-/format/webp/ 2x,https://ucarecdn.com/5b25ea36-73b9-423d-b34f-49ce571f487b/-/stretch/off/-/resize/1440x/-/format/webp/ 3x" type="image/webp"/><source media="(max-width: 800px)" srcset="https://ucarecdn.com/5b25ea36-73b9-423d-b34f-49ce571f487b/-/stretch/off/-/resize/800x/-/format/webp/ 1x,https://ucarecdn.com/5b25ea36-73b9-423d-b34f-49ce571f487b/-/stretch/off/-/resize/1600x/-/format/webp/ 2x,https://ucarecdn.com/5b25ea36-73b9-423d-b34f-49ce571f487b/-/stretch/off/-/resize/2400x/-/format/webp/ 3x" type="image/webp"/><source srcset="https://ucarecdn.com/5b25ea36-73b9-423d-b34f-49ce571f487b/-/stretch/off/-/resize/1100x/-/format/webp/ 1x,https://ucarecdn.com/5b25ea36-73b9-423d-b34f-49ce571f487b/-/stretch/off/-/resize/2200x/-/format/webp/ 2x,https://ucarecdn.com/5b25ea36-73b9-423d-b34f-49ce571f487b/-/stretch/off/-/resize/3000x/-/format/webp/ 3x" type="image/webp"/><img alt="Bike Shop site: localhost:8000/order/1/ page for order #1" height="178" name="order page.png" src="https://ucarecdn.com/5b25ea36-73b9-423d-b34f-49ce571f487b/" width="490"/></picture></p>
+</div>

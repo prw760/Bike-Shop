@@ -1,0 +1,68 @@
+type: edu
+files:
+  - name: bikeshop/__init__.py
+    visible: true
+    learner_created: false
+  - name: bikeshop/asgi.py
+    visible: true
+    learner_created: false
+  - name: bikeshop/settings.py
+    visible: true
+    learner_created: false
+  - name: bikeshop/urls.py
+    visible: true
+    learner_created: false
+  - name: bikeshop/wsgi.py
+    visible: true
+    learner_created: false
+  - name: shop/migrations/__init__.py
+    visible: true
+    learner_created: false
+  - name: shop/__init__.py
+    visible: true
+    learner_created: false
+  - name: shop/admin.py
+    visible: true
+    learner_created: false
+  - name: shop/apps.py
+    visible: true
+    learner_created: false
+  - name: shop/models.py
+    visible: true
+    learner_created: false
+  - name: shop/tests.py
+    visible: true
+    learner_created: false
+  - name: shop/urls.py
+    visible: true
+    learner_created: false
+  - name: shop/views.py
+    visible: true
+    learner_created: false
+  - name: manage.py
+    visible: true
+    learner_created: false
+  - name: shop/migrations/0001_initial.py
+    visible: true
+    learner_created: false
+  - name: test/__init__.py
+    visible: false
+    learner_created: false
+  - name: test/base.py
+    visible: false
+    learner_created: false
+  - name: test/tests.py
+    visible: false
+    learner_created: false
+  - name: tests.py
+    visible: false
+    learner_created: false
+  - name: db.test.sqlite3
+    visible: true
+    learner_created: true
+  - name: shop/templates/shop/index.html
+    visible: true
+    learner_created: true
+feedback_link: https://hyperskill.org/projects/266/stages/1348/implement#comment
+status: Failed
+record: 1
