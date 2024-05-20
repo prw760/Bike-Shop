@@ -66,7 +66,7 @@ files:
   - name: shop/migrations/0004_remove_bike_basket.py
     visible: true
     learner_created: true
-feedback_link: https://hyperskill.org/projects/266/stages/1347/implement#comment
+feedback_link: https://hyperskill.org/learn/step/20778#comment
 status: Solved
 feedback:
   message: Congratulations!

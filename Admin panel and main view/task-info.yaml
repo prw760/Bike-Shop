@@ -42,9 +42,6 @@ files:
   - name: manage.py
     visible: true
     learner_created: false
-  - name: shop/migrations/0001_initial.py
-    visible: true
-    learner_created: false
   - name: test/__init__.py
     visible: false
     learner_created: false
@@ -57,12 +54,15 @@ files:
   - name: tests.py
     visible: false
     learner_created: false
-  - name: db.test.sqlite3
-    visible: true
-    learner_created: true
   - name: shop/templates/shop/index.html
     visible: true
     learner_created: true
-feedback_link: https://hyperskill.org/projects/266/stages/1348/implement#comment
+  - name: Bike_Shop.sqlite3
+    visible: true
+    learner_created: true
+  - name: shop/migrations/0001_initial.py
+    visible: true
+    learner_created: true
+feedback_link: https://hyperskill.org/learn/step/20779#comment
 status: Failed
 record: 1
