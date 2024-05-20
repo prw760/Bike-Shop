@@ -1,8 +1,5 @@
 type: edu
 files:
-  - name: bikeshop/__init__.py
-    visible: true
-    learner_created: false
   - name: bikeshop/asgi.py
     visible: true
     learner_created: false
@@ -61,6 +58,9 @@ files:
     visible: true
     learner_created: true
   - name: shop/migrations/0001_initial.py
+    visible: true
+    learner_created: true
+  - name: bikeshop/__init__.py
     visible: true
     learner_created: true
 feedback_link: https://hyperskill.org/learn/step/20779#comment
