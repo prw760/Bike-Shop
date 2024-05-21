@@ -1,9 +1,8 @@
-import views
-from django.urls import path
+from django.urls import include, path
 from django.contrib import admin
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', views.index, name='index'),
+    path('', include('shop.urls')),
 ]

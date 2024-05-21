@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to the Bike Shop</title>
+</head>
+<body>
+    <h2>Welcome to the Bike shop</h2>
+
+    <p>Choose one of our bikes:</p>
+
+    {% for bike in bikes %}
+    <ul>
+        <li>
+            <a href="/shop/bike/{{ bike.id }}">{{ bike.name }}</a>
+        </li>
+    </ul>
+    {% endfor %}
+
+</body>
+</html>
+<!--
+
+NOTE: INCLUDE THIS CODE TO LINK <UL> ABOVE TO THE BIKE DETAILS PAGE
+
+<a href="/shop/bike/{{ bike.id }}">{{ bike.name }}</a>
+
+-->

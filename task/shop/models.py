@@ -5,19 +5,31 @@ class Frame(models.Model):
 	color = models.CharField(max_length=100)
 	quantity = models.IntegerField()
 
+	def __str__(self):
+		return f"{self.color}"
+
 
 class Seat(models.Model):
 	color = models.CharField(max_length=100)
 	quantity = models.IntegerField()
+
+	def __str__(self):
+		return f"{self.color}"
 
 
 class Tire(models.Model):
 	type = models.CharField(max_length=100)
 	quantity = models.IntegerField()
 
+	def __str__(self):
+		return f"{self.type}"
+
 
 class Basket(models.Model):
 	quantity = models.IntegerField()
+
+	def __str__(self):
+		return f"{self.quantity}"
 
 
 class Bike(models.Model):
@@ -27,6 +39,9 @@ class Bike(models.Model):
 	frame = models.ForeignKey(Frame, on_delete=models.CASCADE)
 	seat = models.ForeignKey(Seat, on_delete=models.CASCADE)
 	tire = models.ForeignKey(Tire, on_delete=models.CASCADE)
+
+	def __str__(self):
+		return f"{self.name}"
 
 
 class Order(models.Model):
