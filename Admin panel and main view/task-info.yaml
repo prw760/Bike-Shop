@@ -66,9 +66,9 @@ files:
   - name: shop/templates/shop/index.html
     visible: true
     learner_created: true
-  - name: shop/templates/bikes.html
-    visible: true
-    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/20779#comment
-status: Failed
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Tue, 21 May 2024 03:35:15 UTC"
 record: 1
