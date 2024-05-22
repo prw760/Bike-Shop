@@ -12,17 +12,9 @@
     {% for bike in bikes %}
     <ul>
         <li>
-            <a href="/shop/bike/{{ bike.id }}">{{ bike.name }}</a>
+            <a href="/bikes/{{ bike.id }}/">{{ bike.name }}</a>
         </li>
     </ul>
     {% endfor %}
-
 </body>
 </html>
-<!--
-
-NOTE: INCLUDE THIS CODE TO LINK <UL> ABOVE TO THE BIKE DETAILS PAGE
-
-<a href="/shop/bike/{{ bike.id }}">{{ bike.name }}</a>
-
--->

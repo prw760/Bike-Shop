@@ -5,12 +5,11 @@
     <title>View Bike Details</title>
 </head>
 <body>
-    <h2>Bike Details</h2>
-    <h3>Make: {{ bike.name }}</h3>
-    <p>Model: {{ bike.description }}</p>
-    <p>Frame Type: {{ bike.frame }}</p>
-    <p>Seat Type: {{ bike.seat }}</p>
-    <p>Tire Type: {{ bike.tire }}</p>
-    <p>Has Basket?: ${{ bike.has_basket }}</p>
+    <h2>{{ bike.name }}</h2>
+    <p>frame: {{ bike.frame }}</p>
+    <p>seat: {{ bike.seat }}</p>
+    <p>tires: {{ bike.tire }}</p>
+    <p>basket: {{ bike.has_basket|yesno:"yes,no" }}</p>
+    <p>description: {{ bike.description }}</p>
 </body>
 </html>
