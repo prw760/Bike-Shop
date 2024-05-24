@@ -11,5 +11,18 @@
     <p>tires: {{ bike.tire }}</p>
     <p>basket: {{ bike.has_basket|yesno:"yes,no" }}</p>
     <p>description: {{ bike.description }}</p>
+    <br><br>
+    {% if get_bike_quantity < 1 %}
+        <h3>Unfortunately, this bike is currently not available</h3>
+    {% else %}
+        <h3>If you would like to order the bike, fill in the form below:</h3>
+        <form action="/bikes/process-bike-order/{{ bike.pk }}/" method="post">
+            {% csrf_token %}
+            <p><label for="name">your name: <input type="text" name="name" maxlength="100"></label></p>
+            <p><label for="surname">your surname: <input type="text" name="surname" maxlength="100"></label></p>
+            <p><label for="phone">your phone number: <input type="text" name="phone_number" maxlength="100"></label></p>
+            <input type="submit" value="Order">
+        </form>
+    {% endif %}
 </body>
 </html>

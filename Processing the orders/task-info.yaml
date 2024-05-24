@@ -48,7 +48,7 @@ files:
   - name: shop/templates/shop/index.html
     visible: true
     learner_created: false
-  - name: db.test.sqlite3
+  - name: Bike_Shop.sqlite3
     visible: true
     learner_created: false
   - name: test/__init__.py
@@ -63,6 +63,15 @@ files:
   - name: tests.py
     visible: false
     learner_created: false
+  - name: shop/forms.py
+    visible: true
+    learner_created: true
+  - name: shop/templates/shop/bikes.html
+    visible: true
+    learner_created: true
+  - name: shop/templates/shop/bike_detail.html
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/20782#comment
 status: Unchecked
 record: -1
