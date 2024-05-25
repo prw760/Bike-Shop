@@ -60,18 +60,6 @@ files:
   - name: tests.py
     visible: false
     learner_created: false
-  - name: shop/forms.py
-    visible: true
-    learner_created: true
-  - name: shop/templates/shop/bikes.html
-    visible: true
-    learner_created: true
-  - name: shop/templates/shop/bike_detail.html
-    visible: true
-    learner_created: true
-  - name: shop/templates/shop/order.html
-    visible: true
-    learner_created: true
   - name: shop/migrations/0002_bike_basket.py
     visible: true
     learner_created: true
@@ -82,6 +70,18 @@ files:
     visible: true
     learner_created: true
   - name: shop/migrations/0005_remove_bike_basket.py
+    visible: true
+    learner_created: true
+  - name: shop/forms.py
+    visible: true
+    learner_created: true
+  - name: shop/templates/shop/order.html
+    visible: true
+    learner_created: true
+  - name: shop/templates/shop/bike_detail.html
+    visible: true
+    learner_created: true
+  - name: shop/templates/shop/bikes.html
     visible: true
     learner_created: true
 feedback_link: https://hyperskill.org/learn/step/20782#comment
