@@ -29,7 +29,7 @@ class Basket(models.Model):
 	quantity = models.IntegerField()
 
 	def __str__(self):
-		return f"{self.quantity}"
+		return "Standard Basket"
 
 
 class Bike(models.Model):

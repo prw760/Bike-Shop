@@ -1,11 +1,10 @@
 from django.http import HttpResponseRedirect
-from django.views import View
 from django.shortcuts import render
 from django.views import generic
 
 import views
 from .forms import BikeOrderForm
-from .models import Bike, Order, Basket
+from .models import Frame, Seat, Tire, Basket, Bike, Order
 
 
 class BikeListView(generic.ListView):
@@ -74,13 +73,23 @@ def process_order(request):
 
 	bike = Bike.objects.get(id=bike_id)
 
-	bike.frame.quantity -= 1
-	bike.seat.quantity -= 1
-	bike.tire.quantity -= 2
+	frame = Frame.objects.get(id=bike.frame_id)
+	frame.quantity -= 1
+	frame.save()
+
+	seat = Seat.objects.get(id=bike.seat_id)
+	seat.quantity -= 1
+	seat.save()
+
+	tire = Tire.objects.get(id=bike.tire_id)
+	tire.quantity -= 2
+	tire.save()
+
 	if bike.has_basket:
-		basket = Basket.objects.first()
+		basket = Basket.objects.get(id=bike.basket_id)
 		basket.quantity -= 1
 		basket.save()
+
 	bike.save()
 
 	order = Order(bike=bike, name=name, surname=surname, phone_number=phone_number, status='P')
@@ -97,3 +106,8 @@ class OrderView(generic.DetailView):
 	def get_queryset(self, *args, **kwargs):
 		order_id = self.kwargs.get('pk')
 		return Order.objects.filter(id=order_id)
+
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data(**kwargs)
+		context['bike'] = Bike.objects.get(id=self.object.bike_id)
+		return context
