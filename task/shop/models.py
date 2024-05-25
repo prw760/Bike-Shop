@@ -38,7 +38,6 @@ class Bike(models.Model):
 	frame = models.ForeignKey(Frame, on_delete=models.CASCADE)
 	seat = models.ForeignKey(Seat, on_delete=models.CASCADE)
 	tire = models.ForeignKey(Tire, on_delete=models.CASCADE)
-	basket = models.ForeignKey(Basket, on_delete=models.CASCADE)
 	has_basket = models.BooleanField()
 
 	def __str__(self):
