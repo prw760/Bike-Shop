@@ -73,29 +73,29 @@ def process_order(request):
 
 	bike = Bike.objects.get(id=bike_id)
 
-	frame = Frame.objects.get(id=bike.frame_id)
-	frame.quantity -= 1
-	frame.save()
+	if bike.enough_parts:
 
-	seat = Seat.objects.get(id=bike.seat_id)
-	seat.quantity -= 1
-	seat.save()
+		frame = Frame.objects.get(id=bike.frame_id)
+		frame.quantity -= 1
+		frame.save()
 
-	tire = Tire.objects.get(id=bike.tire_id)
-	tire.quantity -= 2
-	tire.save()
+		seat = Seat.objects.get(id=bike.seat_id)
+		seat.quantity -= 1
+		seat.save()
 
-	if bike.has_basket:
-		basket = Basket.objects.get(id=bike.basket_id)
-		basket.quantity -= 1
-		basket.save()
+		tire = Tire.objects.get(id=bike.tire_id)
+		tire.quantity -= 2
+		tire.save()
 
-	bike.save()
+		if bike.has_basket:
+			basket = Basket.objects.last()
+			basket.quantity -= 1
+			basket.save()
 
-	order = Order(bike=bike, name=name, surname=surname, phone_number=phone_number, status='P')
-	order.save()
+		order = Order(bike=bike, name=name, surname=surname, phone_number=phone_number, status='P')
+		order.save()
 
-	return HttpResponseRedirect(f'/order/{order.id}/')
+		return HttpResponseRedirect(f'/order/{order.id}/')
 
 
 class OrderView(generic.DetailView):

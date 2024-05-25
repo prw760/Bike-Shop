@@ -12,7 +12,7 @@
     <p>basket: {{ bike.has_basket|yesno:"yes,no" }}</p>
     <p>description: {{ bike.description }}</p>
     <br><br>
-    {% if get_bike_quantity < 1 %}
+    {% if bike.enough_bike_parts %}
         <h3>Unfortunately, this bike is currently not available</h3>
     {% else %}
         <h3>If you would like to order the bike, fill in the form below:</h3>
