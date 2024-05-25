@@ -84,41 +84,10 @@ files:
   - name: shop/migrations/0005_remove_bike_basket.py
     visible: true
     learner_created: true
-  - name: db.test.sqlite3
-    visible: true
-    is_binary: true
-    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/20782#comment
-status: Failed
+status: Solved
 feedback:
-  message: |-
-    Wrong answer in test #12
-
-    Order page should include "h2" tag with text "Thanks for your order!"
-
-    Please find below the output of your program during this failed test.
-
-    ---
-
-    stdout:
-    Performing system checks...
-
-    System check identified no issues (0 silenced).
-    May 25, 2024 - 20:08:37
-    Django version 4.1.1, using settings 'bikeshop.settings'
-    Starting development server at http://127.0.0.1:8000/
-    Quit the server with CONTROL-C.
-
-    stderr:
-    [25/May/2024 20:08:37] "GET /bikes/ HTTP/1.1" 200 514
-    [25/May/2024 20:08:37] "GET /bikes/1/ HTTP/1.1" 200 1194
-    [25/May/2024 20:08:37] "GET /bikes/2/ HTTP/1.1" 200 1203
-    [25/May/2024 20:08:37] "GET /bikes/3/ HTTP/1.1" 200 1187
-    [25/May/2024 20:08:37] "GET /bikes/ HTTP/1.1" 200 514
-    [25/May/2024 20:08:37] "GET /bikes/1/ HTTP/1.1" 200 1194
-    [25/May/2024 20:08:37] "GET /bikes/1/ HTTP/1.1" 200 1194
-    [25/May/2024 20:08:37] "POST /bikes/1/ HTTP/1.1" 302 0
-    [25/May/2024 20:08:37] "GET /order/3/ HTTP/1.1" 200 238
-    [25/May/2024 20:08:37] "GET /order/1/ HTTP/1.1" 200 238
-  time: "Sat, 25 May 2024 20:08:38 UTC"
+  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">Hyperskill</a>
+    to continue learning.
+  time: "Sat, 25 May 2024 20:09:57 UTC"
 record: -1
