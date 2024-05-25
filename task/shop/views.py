@@ -17,7 +17,7 @@ class BikeListView(generic.ListView):
 class BikeDetailView(generic.DetailView):
 
 	template_name = 'shop/bike_detail.html'  # Specify your own template name/location
-	form_class = BikeOrderForm
+	form = BikeOrderForm
 	context_object_name = 'bike'  # your own name for the object as a template variable
 
 	def get_queryset(self, *args, **kwargs):

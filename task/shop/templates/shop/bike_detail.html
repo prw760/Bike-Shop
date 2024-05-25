@@ -18,9 +18,9 @@
         <h3>If you would like to order the bike, fill in the form below:</h3>
         <form action="/process-order/" method="post">
             {% csrf_token %}
-            <p><label for="name">your name: <input type="text" name="name" maxlength="100"></label></p>
-            <p><label for="surname">your surname: <input type="text" name="surname" maxlength="100"></label></p>
-            <p><label for="phone">your phone number: <input type="text" name="phone_number" maxlength="100"></label></p>
+            <label for="name">your name</label>: <input type="text" id="name" name="name" maxlength="100">
+            <p><label for="surname">your surname</label>: <input type="text" id="surname" name="surname" maxlength="100"></p>
+            <p><label for="phone_number">your phone number</label>: <input type="text" id="phone_number" name="phone_number" maxlength="100"></p>
             <p><input type="hidden" name="bike_id" value="{{ bike.pk }}"></p>
             <input type="submit" value="Order">
         </form>
