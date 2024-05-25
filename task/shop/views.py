@@ -17,7 +17,7 @@ class BikeListView(generic.ListView):
 class BikeDetailView(generic.DetailView):
 
 	template_name = 'shop/bike_detail.html'  # Specify your own template name/location
-	form = BikeOrderForm
+	form_class = BikeOrderForm
 	context_object_name = 'bike'  # your own name for the object as a template variable
 
 	def get_queryset(self, *args, **kwargs):
@@ -28,9 +28,18 @@ class BikeDetailView(generic.DetailView):
 		bike_id = self.kwargs.get('pk')
 		return Bike.objects.get(id=bike_id).quantity
 
-	def form_valid(self, *args, **kwargs):
 
-		form = self.form
+class ProcessOrderView(generic.FormView):
+
+	template_name = 'shop/order.html'  # Specify your own template name/location
+	form_class = BikeOrderForm
+	context_object_name = 'order'  # your own name for the object as a template variable
+
+	def get_queryset(self, *args, **kwargs):
+		order_id = self.kwargs.get('pk')
+		return Order.objects.filter(id=order_id)
+
+	def get_context_data(self, form):
 
 		name = form.cleaned_data['name']
 		surname = form.cleaned_data['surname']
@@ -39,26 +48,24 @@ class BikeDetailView(generic.DetailView):
 
 		bike = Bike.objects.get(id=bike_id)
 
-		bike_order = Order.objects.create(bike=bike, name=name, surname=surname,
-											phone_number=phone_number, status='P')
-		bike_order.save()
+		order = Order(bike=bike, name=name, surname=surname, phone_number=phone_number, status='P')
+		order.save()
 
 		bike.frame.quantity -= 1
-		bike.tires.quantity -= 1
-		bike.basket.quantity -= 1
 		bike.seat.quantity -= 1
-		# bike.quantity -= 1
-
+		bike.tire.quantity -= 2
+		if bike.has_basket:
+			bike.basket.quantity -= 1
 		bike.save()
 
-		return HttpResponseRedirect("order/" + str(bike_order.id) + "/")
+		return HttpResponseRedirect("/order/" + str(order.id) + "/")
 
 
-class OrderView(generic.TemplateView):
+class OrderView(generic.DetailView):
 
 	template_name = 'shop/order.html'  # Specify your own template name/location
+	context_object_name = 'order'  # your own name for the object as a template variable
 
-
-
-
+	def get_queryset(self, *args, **kwargs):
+		order_id = self.kwargs.get('pk')
 

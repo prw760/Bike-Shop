@@ -35,10 +35,11 @@ class Basket(models.Model):
 class Bike(models.Model):
 	name = models.CharField(max_length=100, default='Generic Bike')
 	description = models.CharField(max_length=100)
-	has_basket = models.BooleanField()
 	frame = models.ForeignKey(Frame, on_delete=models.CASCADE)
 	seat = models.ForeignKey(Seat, on_delete=models.CASCADE)
 	tire = models.ForeignKey(Tire, on_delete=models.CASCADE)
+	basket = models.ForeignKey(Basket, on_delete=models.CASCADE, null=True, blank=True)
+	has_basket = models.BooleanField()
 
 	def __str__(self):
 		return f"{self.name}"
