@@ -45,9 +45,6 @@ files:
   - name: shop/migrations/0001_initial.py
     visible: true
     learner_created: false
-  - name: shop/templates/shop/index.html
-    visible: true
-    learner_created: false
   - name: Bike_Shop.sqlite3
     visible: true
     learner_created: false
@@ -75,37 +72,15 @@ files:
   - name: shop/templates/shop/order.html
     visible: true
     learner_created: true
+  - name: db.test.sqlite3
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/20782#comment
 status: Failed
 feedback:
   message: |-
-    Wrong answer in test #11
+    Error in test #1
 
-    Check if bike parts get updated once an order is made.
-
-    Please find below the output of your program during this failed test.
-
-    ---
-
-    stdout:
-    Performing system checks...
-
-    System check identified no issues (0 silenced).
-    May 25, 2024 - 00:18:04
-    Django version 4.1.1, using settings 'bikeshop.settings'
-    Starting development server at http://127.0.0.1:8000/
-    Quit the server with CONTROL-C.
-
-    stderr:
-    [25/May/2024 00:18:04] "GET /bikes/ HTTP/1.1" 200 514
-    [25/May/2024 00:18:04] "GET /bikes/1/ HTTP/1.1" 200 987
-    [25/May/2024 00:18:04] "GET /bikes/2/ HTTP/1.1" 200 996
-    [25/May/2024 00:18:04] "GET /bikes/3/ HTTP/1.1" 200 980
-    [25/May/2024 00:18:04] "GET /bikes/ HTTP/1.1" 200 514
-    [25/May/2024 00:18:04] "GET /bikes/1/ HTTP/1.1" 200 987
-    [25/May/2024 00:18:04] "GET /bikes/1/ HTTP/1.1" 200 987
-    Method Not Allowed (POST): /bikes/1/
-    Method Not Allowed: /bikes/1/
-    [25/May/2024 00:18:04] "POST /bikes/1/ HTTP/1.1" 405 0
-  time: "Sat, 25 May 2024 00:18:04 UTC"
+    Cannot apply migrations to an empty database.
+  time: "Sat, 25 May 2024 00:34:57 UTC"
 record: -1
