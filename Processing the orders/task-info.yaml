@@ -75,10 +75,6 @@ files:
   - name: shop/migrations/0002_bike_basket.py
     visible: true
     learner_created: true
-  - name: db.test.sqlite3
-    visible: true
-    is_binary: true
-    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/20782#comment
 status: Failed
 feedback:
@@ -95,17 +91,17 @@ feedback:
     Performing system checks...
 
     System check identified no issues (0 silenced).
-    May 25, 2024 - 07:35:35
+    May 25, 2024 - 07:36:52
     Django version 4.1.1, using settings 'bikeshop.settings'
     Starting development server at http://127.0.0.1:8000/
     Quit the server with CONTROL-C.
 
     stderr:
-    [25/May/2024 07:35:35] "GET /bikes/ HTTP/1.1" 200 514
-    [25/May/2024 07:35:35] "GET /bikes/1/ HTTP/1.1" 200 1100
-    [25/May/2024 07:35:35] "GET /bikes/2/ HTTP/1.1" 200 1109
-    [25/May/2024 07:35:35] "GET /bikes/3/ HTTP/1.1" 200 1093
-    [25/May/2024 07:35:35] "GET /bikes/ HTTP/1.1" 200 514
-    [25/May/2024 07:35:35] "GET /bikes/1/ HTTP/1.1" 200 1100
-  time: "Sat, 25 May 2024 07:35:35 UTC"
+    [25/May/2024 07:36:52] "GET /bikes/ HTTP/1.1" 200 514
+    [25/May/2024 07:36:52] "GET /bikes/1/ HTTP/1.1" 200 1100
+    [25/May/2024 07:36:52] "GET /bikes/2/ HTTP/1.1" 200 1109
+    [25/May/2024 07:36:52] "GET /bikes/3/ HTTP/1.1" 200 1093
+    [25/May/2024 07:36:52] "GET /bikes/ HTTP/1.1" 200 514
+    [25/May/2024 07:36:52] "GET /bikes/1/ HTTP/1.1" 200 1100
+  time: "Sat, 25 May 2024 07:36:52 UTC"
 record: -1
