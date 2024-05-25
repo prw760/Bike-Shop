@@ -2,7 +2,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.views import generic
 from .forms import BikeOrderForm
-from .models import Bike, Order
+from .models import Bike, Order, Basket
 
 
 class BikeListView(generic.ListView):
@@ -29,36 +29,28 @@ class BikeDetailView(generic.DetailView):
 		return Bike.objects.get(id=bike_id).quantity
 
 
-class ProcessOrderView(generic.FormView):
+def process_order(request):
 
-	template_name = 'shop/order.html'  # Specify your own template name/location
-	form_class = BikeOrderForm
-	context_object_name = 'order'  # your own name for the object as a template variable
+	name = request.POST['name']
+	surname = request.POST['surname']
+	phone_number = request.POST['phone_number']
+	bike_id = request.POST['bike_id']
 
-	def get_queryset(self, *args, **kwargs):
-		order_id = self.kwargs.get('pk')
-		return Order.objects.filter(id=order_id)
+	bike = Bike.objects.get(id=bike_id)
 
-	def get_context_data(self, form):
+	bike.frame.quantity -= 1
+	bike.seat.quantity -= 1
+	bike.tire.quantity -= 2
+	if bike.has_basket:
+		basket = Basket.objects.first()
+		basket.quantity -= 1
+		basket.save()
+	bike.save()
 
-		name = form.cleaned_data['name']
-		surname = form.cleaned_data['surname']
-		phone_number = form.cleaned_data['phone_number']
-		bike_id = form.cleaned_data['bike_id']
+	order = Order(bike=bike, name=name, surname=surname, phone_number=phone_number, status='P')
+	order.save()
 
-		bike = Bike.objects.get(id=bike_id)
-
-		order = Order(bike=bike, name=name, surname=surname, phone_number=phone_number, status='P')
-		order.save()
-
-		bike.frame.quantity -= 1
-		bike.seat.quantity -= 1
-		bike.tire.quantity -= 2
-		if bike.has_basket:
-			bike.basket.quantity -= 1
-		bike.save()
-
-		return HttpResponseRedirect("/order/" + str(order.id) + "/")
+	return HttpResponseRedirect(f'/order/{order.id}/')
 
 
 class OrderView(generic.DetailView):
@@ -68,4 +60,4 @@ class OrderView(generic.DetailView):
 
 	def get_queryset(self, *args, **kwargs):
 		order_id = self.kwargs.get('pk')
-
+		return Order.objects.filter(id=order_id)

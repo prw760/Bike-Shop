@@ -91,17 +91,17 @@ feedback:
     Performing system checks...
 
     System check identified no issues (0 silenced).
-    May 25, 2024 - 03:28:37
+    May 25, 2024 - 06:30:02
     Django version 4.1.1, using settings 'bikeshop.settings'
-    Starting development server at http://127.0.0.1:8001/
+    Starting development server at http://127.0.0.1:8000/
     Quit the server with CONTROL-C.
 
     stderr:
-    [25/May/2024 03:28:37] "GET /bikes/ HTTP/1.1" 200 514
-    [25/May/2024 03:28:37] "GET /bikes/1/ HTTP/1.1" 200 1059
-    [25/May/2024 03:28:37] "GET /bikes/2/ HTTP/1.1" 200 1068
-    [25/May/2024 03:28:37] "GET /bikes/3/ HTTP/1.1" 200 1052
-    [25/May/2024 03:28:37] "GET /bikes/ HTTP/1.1" 200 514
-    [25/May/2024 03:28:37] "GET /bikes/1/ HTTP/1.1" 200 1059
-  time: "Sat, 25 May 2024 03:28:37 UTC"
+    [25/May/2024 06:30:02] "GET /bikes/ HTTP/1.1" 200 514
+    [25/May/2024 06:30:02] "GET /bikes/1/ HTTP/1.1" 200 1059
+    [25/May/2024 06:30:02] "GET /bikes/2/ HTTP/1.1" 200 1068
+    [25/May/2024 06:30:02] "GET /bikes/3/ HTTP/1.1" 200 1052
+    [25/May/2024 06:30:02] "GET /bikes/ HTTP/1.1" 200 514
+    [25/May/2024 06:30:02] "GET /bikes/1/ HTTP/1.1" 200 1059
+  time: "Sat, 25 May 2024 06:30:02 UTC"
 record: -1
