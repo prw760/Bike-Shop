@@ -75,6 +75,9 @@ def process_order(request):
 
 	if bike.enough_parts:
 
+		order = Order(bike=bike, name=name, surname=surname, phone_number=phone_number, status='P')
+		order.save()
+
 		frame = Frame.objects.get(id=bike.frame_id)
 		frame.quantity -= 1
 		frame.save()
@@ -92,10 +95,11 @@ def process_order(request):
 			basket.quantity -= 1
 			basket.save()
 
-		order = Order(bike=bike, name=name, surname=surname, phone_number=phone_number, status='P')
-		order.save()
-
 		return HttpResponseRedirect(f'/order/{order.id}/')
+
+	else:
+
+		return HttpResponseRedirect(f'/bike/{bike_id}/')
 
 
 class OrderView(generic.DetailView):
